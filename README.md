@@ -20,9 +20,9 @@ How to use the code:
 
 In order to run the code you only have to run the main.py script. First, some units tests will be run. 
 Then, you will create the network with the data from the json file and you will be asked to give a value for each
-variable (evidence (True or False), unknown or queried). All functionalities are implemnted in the Net and Factor classes.
+variable (evidence (True or False), unknown or queried). All functionalities are implemented in the Net and Factor classes.
 If only one variable is queried, the program will output the probability of this variable. If more than one is queried,
-a table will be output with the joint distribution of all queried variables.
+the program will output a table describing the joint probability distribution of all queried variables.
 
 In order to use the code to perform inference in a different Bayesian network, please create another json file describing
 the Bayesian network in which to do inference in the same manner than the one given. 
@@ -49,8 +49,8 @@ this operation would be 2^(3). In general, the complexity of the variable elimin
 variables) would be n*2^(k), being n the number of variables and k the maximum size of the factor created before
 marginalizing.
 
-Choosing the right ordering to eliminate the variables to eliminate is also a NP-hard problem. In practice,
+Unfortunately, choosing the right ordering of the variables to eliminate is also a NP-hard problem. In practice,
 there are heuristics that give reasonably good performance. In this implementation, I have used the Min-neighbors
 policy that consists of choosing the variable with less dependent variables. Since after combining factors, the 
-new factor is not a probability distribution anymore, I consider a Markov Network (undirected) and calculate the
-dependent variables as the ones that share any factor.
+new factors are not probability distributions anymore, I consider a Markov Network (undirected graphical model)
+and calculate the dependent variables as the ones that share any factor.
