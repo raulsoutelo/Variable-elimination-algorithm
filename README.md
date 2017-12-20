@@ -13,8 +13,8 @@ probability tables have been taken from the paper:
   publisher={JSTOR}
 }
 
-The code is able to infer the joint probability for any combination of variables, providing the others are either 
-unknown or seen (True or false).
+The code is able to infer the joint probability distribution for any subset of these binary variables.
+The remaining variables should be provided by the user as seen (True or False) or unknown.
 
 How to use the code:
 
